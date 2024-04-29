@@ -1,7 +1,7 @@
 .elements {
   max-width: 882px;
   height: 743px;
-  padding-top: 75px;
+  padding-top: 50px;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);

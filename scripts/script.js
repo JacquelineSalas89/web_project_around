@@ -5,10 +5,8 @@ const profileName = document.querySelector(".profile__name");
 const profileAbout = document.querySelector(".profile__about");
 const inputName = document.querySelector(".popup__input-name");
 const inputAbout = document.querySelector(".popup__input-about");
-const formProfile = document.querySelector(".popup__form");
+const formSaveProfile = document.querySelector(".popup__form");
 const buttonSave = document.querySelector(".popup__button-save");
-
-buttonEdit.addEventListener("click", handleOpenProfile);
 
 function handleOpenProfile(evt) {
   popupProfile.classList.add("popup_show");
@@ -18,7 +16,10 @@ function handleCloseProfile(evt) {
   popupProfile.classList.remove("popup_show");
 }
 
-buttonSave.addEventListener("submit", function (evt) {
+buttonEdit.addEventListener("click", handleOpenProfile);
+buttonClose.addEventListener("click", handleCloseProfile);
+
+formSaveProfile.addEventListener("submit", function (evt) {
   evt.preventDefault();
   profileName.textContent = inputName.value;
   profileAbout.textContent = inputAbout.value;

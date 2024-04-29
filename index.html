@@ -23,24 +23,29 @@
         <section class="profile">
           <div class="profile__info">
             <img
-             class="profile__avatar"
+              class="profile__avatar"
               src="images/Avatar.png"
               alt="Imagen Jacques Cousteau"
-           />
-            <h1 class="profile__name">Jacques Cousteau</h1>
+            />
+            <h1 class="profile__name">
+              Jacques Cousteau
+              <span class="profile__about">Explorador</span>
+            </h1>
             <button class="profile__edit-button" type="button"></button>
             <button class="profile__add-button" type="button"></button>
           </div>
-          <p class="profile__about">Explorador</p>
         </section>
 
-
-        <div class="popup" id="popup-profile" >
+        <div class="popup" id="popup-profile">
           <form class="popup__form" id="form-profile">
-             <img class="popup__close-icon" src="images/Close-Icon.png"alt= "boton de cerrar form"
-              id="close-profile-form"/>
+            <img
+              class="popup__close-icon"
+              src="images/Close-Icon.png"
+              alt="boton de cerrar form"
+              id="close-profile-form"
+            />
             <h2 class="poppup__title">Editar Perfil</h2>
-            <input 
+            <input
               class="popup__input-name"
               type="text"
               id="input-name"
@@ -49,13 +54,24 @@
               value=""
               placeholder="Nombre"
               required
-              />
-           <input
-              class= "popup__input-about"
+            />
+            <input
+              class="popup__input-about"
               type="text"
               id="input-about"
-              minlength="2" maxlength="200" value="" placeholder="Acerca de mi"required/>
-           <button class="popup__button-save" type="submit" id="profile-form-button">Guardar</button>
+              minlength="2"
+              maxlength="200"
+              value=""
+              placeholder="Acerca de mi"
+              required
+            />
+            <button
+              class="popup__button-save"
+              type="submit"
+              id="profile-form-button"
+            >
+              Guardar
+            </button>
           </form>
         </div>
 
@@ -124,11 +140,11 @@
           </div>
         </section>
       </main>
-      
-   
-    <footer class="footer">
-     <h3 class="footer__copyright">© 2024 Jacqueline Salas</h3>
-    </footer>
-    <script src="/scripts/script.js"></script>
+
+      <footer class="footer">
+        <h3 class="footer__copyright">© 2024 Jacqueline Salas</h3>
+      </footer>
+      <script src="/scripts/script.js"></script>
+    </div>
   </body>
 </html>
