@@ -1,6 +1,6 @@
 .elements {
   max-width: 882px;
-  height: 743px;
+
   padding-top: 50px;
   margin: auto;
   display: grid;
@@ -79,4 +79,25 @@
 
 .element__delete-button:hover {
   opacity: 0.6;
+}
+
+@media screen and (max-width: 900px) {
+  .elements {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .elements {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .element__card {
+    margin: auto;
+  }
 }
