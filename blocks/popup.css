@@ -6,6 +6,7 @@
   width: 100vw;
   height: 100vw;
   justify-content: center;
+  max-width: 1200px;
 }
 
 .popup__form {
