@@ -1,6 +1,5 @@
-.elements {
+.element {
   max-width: 882px;
-
   padding-top: 50px;
   margin: auto;
   display: grid;
