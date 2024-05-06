@@ -69,11 +69,9 @@
   cursor: pointer;
   box-sizing: border-box;
   border: none;
-  position: absolute;
   top: 18px;
   left: 247px;
   background-repeat: no-repeat;
-  border: none;
   background-color: transparent;
 }
 
