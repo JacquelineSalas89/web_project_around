@@ -72,6 +72,7 @@ function createCard(name, link) {
 
   cardImage.src = link;
   cardTitle.textContent = name;
+  cardImage.alt = name;
   return card;
 }
 
