@@ -56,7 +56,6 @@
 }
 
 .profile__add-button {
-  background-image: url(/images/add_button.png);
   display: flex;
   align-self: center;
   width: 150px;
