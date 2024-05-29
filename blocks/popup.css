@@ -126,8 +126,6 @@
   top: -45px;
   right: -45px;
   cursor: pointer;
-
-  background-color: transparent;
 }
 
 .popup-image__close:hover {

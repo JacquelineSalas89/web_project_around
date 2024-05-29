@@ -51,11 +51,11 @@
 }
 
 .element__like-button_active {
-  background-image: url(./images/Union.png);
+  background-image: url(/images/Union.png);
 }
 
 .element__delete-button {
-  background-image: url(./images/Trash.png);
+  background-image: url(/images/Trash.png);
   position: absolute;
   width: 24px;
   height: 22px;
