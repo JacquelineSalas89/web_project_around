@@ -50,21 +50,10 @@
   line-height: 29.05px;
 }
 
-.popup__input-name {
+.popup__input {
   font-family: "Inter", Arial, sans-serif;
   color: black;
   margin-top: 54px;
-  padding: 0 0 7px 0;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16.94px;
-  border: none;
-  border-bottom: 1px solid #545454;
-}
-
-.popup__input-about {
-  font-family: "Inter", Arial, sans-serif;
-  margin-top: 30px;
   padding: 0 0 7px 0;
   font-weight: 400;
   font-size: 14px;
@@ -91,18 +80,6 @@
 
 .popup_show-card {
   display: flex;
-}
-
-.popup__input-link {
-  font-family: "Inter", Arial, sans-serif;
-  margin-top: 30px;
-  padding: 0 0 7px 0;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16.94px;
-  border: none;
-  border-bottom: 1px solid #545454;
-  z-index: 2;
 }
 
 .popup-image {
@@ -157,6 +134,22 @@
 
 .opup-image__close:hover {
   opacity: 0.6;
+}
+
+.popup__button_disabled {
+  background: #000000cc;
+  opacity: 0.2;
+}
+.popup__input_type_error {
+  border-bottom: 1px solid red;
+}
+
+.popup__input-error {
+  color: #ff0000;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
 }
 
 @media screen and (max-width: 590px) {

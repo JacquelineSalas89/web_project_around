@@ -76,9 +76,11 @@ function createCard(name, link) {
   return card;
 }
 
-buttonClosePopupImage.addEventListener("click", function () {
+function handleCloseImage() {
   popupImage.classList.remove("popup-image_show");
-});
+}
+
+buttonClosePopupImage.addEventListener("click", handleCloseImage);
 
 initialCards.forEach(function (element) {
   const initialCard = createCard(element.name, element.link);
@@ -119,4 +121,29 @@ formSaveCard.addEventListener("submit", function (evt) {
   const newCard = createCard(inputCardName.value, inputCardLink.value);
   cardsContainer.prepend(newCard);
   handleCloseCardForm();
+});
+
+document.addEventListener("keydown", function (evt) {
+  if (evt.key === "Escape") {
+    handleCloseCardForm();
+    handleCloseProfile();
+    handleCloseImage();
+  }
+});
+
+popupCard.addEventListener("click", function (evt) {
+  if (evt.target === popupCard) {
+    handleCloseCardForm();
+  }
+});
+
+popupProfile.addEventListener("click", function (evt) {
+  if (evt.target === popupProfile) {
+    handleCloseProfile();
+  }
+});
+popupImage.addEventListener("click", function (evt) {
+  if (evt.target === popupImage) {
+    handleCloseImage();
+  }
 });

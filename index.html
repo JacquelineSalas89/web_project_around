@@ -46,17 +46,18 @@
             />
             <h2 class="popup__title">Editar Perfil</h2>
             <input
-              class="popup__input-name"
+              class="popup__input"
               type="text"
               id="input-name"
               minlength="2"
-              maxlength="80"
+              maxlength="40"
               value=""
               placeholder="Nombre"
               required
             />
+            <span class="popup__input-error input-name-error"></span>
             <input
-              class="popup__input-about"
+              class="popup__input"
               type="text"
               id="input-about"
               minlength="2"
@@ -65,6 +66,7 @@
               placeholder="Acerca de mi"
               required
             />
+            <span class="popup__input-error input-about-error"></span>
             <button
               class="popup__button-save"
               type="submit"
@@ -85,25 +87,25 @@
             />
             <h2 class="popup__title">Nuevo lugar</h2>
             <input
-              class="popup__input-name"
-              type="text"
+              class="popup__input"
               id="input-card"
+              type="text"
               minlength="2"
-              maxlength="80"
+              maxlength="30"
               value=""
               placeholder="Título"
               required
             />
+            <span class="popup__input-error input-card-error"></span>
             <input
-              class="popup__input-link"
-              type="text"
+              class="popup__input"
+              type="url"
               id="input-link"
-              minlength="2"
-              maxlength="200"
               value=""
               placeholder="Enlace de la imagen"
               required
             />
+            <span class="popup__input-error input-link-error"></span>
             <button class="popup__button-save" type="submit" id="close-card">
               Crear
             </button>
@@ -142,5 +144,6 @@
       </footer>
     </div>
     <script src="/scripts/script.js"></script>
+    <script src="/scripts/validation.js"></script>
   </body>
 </html>
