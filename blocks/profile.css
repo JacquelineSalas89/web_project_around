@@ -8,9 +8,10 @@
 }
 
 .profile__avatar {
-  width: 168.75px;
-  height: 127.5px;
+  width: 145px;
+  height: 145px;
   background-size: auto;
+  border-radius: 60px;
 }
 
 .profile__info {
@@ -24,6 +25,7 @@
   color: #ffff;
   margin: 16px 0 0 26px;
   padding: 0;
+  overflow: hidden;
 }
 
 .profile__edit-button,
@@ -53,6 +55,7 @@
   color: #ffff;
   padding-top: 14px;
   margin-left: 26px;
+  overflow: hidden;
 }
 
 .profile__add-button {
