@@ -18,5 +18,7 @@ Diseño responsivo
 Javascript
 Git
 
+Java Script modular + estructura de programación orientada a objetos (POO).
+
 Enlace sitio web:
 https://jacquelinesalas89.github.io/web_project_around/
