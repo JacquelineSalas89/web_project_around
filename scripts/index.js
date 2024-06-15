@@ -129,7 +129,7 @@ popupImage.addEventListener("click", function (evt) {
   }
 });
 
-const validator = new FormValidator(formElement, {
+const validator = new FormValidator(formSaveCard, {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__button-save",
@@ -139,3 +139,14 @@ const validator = new FormValidator(formElement, {
 });
 
 validator.enableValidation();
+
+const validatorProfile = new FormValidator(formSaveProfile, {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button-save",
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorMessageClass: "popup__input-error",
+});
+
+validatorProfile.enableValidation();
