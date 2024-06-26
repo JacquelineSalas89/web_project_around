@@ -3,7 +3,7 @@ import FormValidator from "../components/FormValidator.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 
 import {
-  buttonEdit,g
+  buttonEdit,
   profileName,
   profileAbout,
   formSaveProfile,
