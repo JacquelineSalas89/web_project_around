@@ -1,19 +1,15 @@
-import Card from "./Card.js";
-import FormValidator from "./FormValidator.js";
+import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
+import PopupWithForm from "../components/PopupWithForm.js";
 
 import {
-  initialCards,
-  popupProfile,
-  buttonEdit,
-  buttonClose,
+  buttonEdit,g
   profileName,
   profileAbout,
-  inputName,
-  inputAbout,
   formSaveProfile,
   buttonSave,
+  buttonClose,
   buttonOpenCardForm,
-  popupCard,
   inputCardName,
   buttonCloseCard,
   inputCardLink,
@@ -26,102 +22,91 @@ import {
   buttonClosePopupImage,
 } from "./utils.js";
 
-/*function createCard(name, link) {
-  const card = template.cloneNode(true).content.querySelector(".element");
-  const cardImage = card.querySelector(".element__image");
-  const cardTitle = card.querySelector(".element__text");
-  const buttonlike = card.querySelector(".element__like-button");
-  const buttonDelete = card.querySelector(".element__delete-button");
-
-  buttonDelete.addEventListener("click", function () {
-    card.remove();
-  });
-
-  buttonlike.addEventListener("click", function () {
-    buttonlike.classList.toggle("element__like-button_active");
-  });
-
-  cardImage.addEventListener("click", function () {
-    popupImage.classList.add("popup__image_show");
-    popupImageFull.src = cardImage.src;
-    popupImageTitle.textContent = cardTitle.textContent;
-    popupImageFull.alt = cardTitle.textContent;
-  });
-
-  cardImage.src = link;
-  cardTitle.textContent = name;
-  cardImage.alt = name;
-  return card;
-}*/
+const initialCards = [
+  {
+    name: "Valle de Yosemite",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
+  },
+  {
+    name: "Lago Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
+  },
+  {
+    name: "Montañas Calvas",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
+  },
+  {
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
+  },
+  {
+    name: "Parque Nacional de la Vanoise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
+  },
+];
 
 initialCards.forEach(function (element) {
   const newCard = new Card(element.name, element.link);
   cardsContainer.append(newCard.generateCard());
 });
 
+const popupProfile = new PopupWithForm("#popup-profile", (inputs) => {
+  profileName.textContent = inputs.name;
+  profileAbout.textContent = inputs.job;
+});
+
+const popupCard = new PopupWithForm("#popup-card", (inputs) => {
+  const newCard = new Card(inputs.title, inputs.link).generateCard();
+  cardsContainer.prepend(newCard);
+});
+
+popupProfile.setEventListeners();
+popupCard.setEventListeners();
+
+buttonEdit.addEventListener("click", () => {
+  popupProfile.open();
+});
+
+buttonOpenCardForm.addEventListener("click", () => {
+  popupCard.open();
+});
+
+/*buttonClose.addEventListener("click", () => {
+  popupProfile.close();
+});
+*/
+
 function handleCloseImage() {
   popupImage.classList.remove("popup__image_show");
   buttonClosePopupImage.addEventListener("click", handleCloseImage);
 }
-function handleOpenCardForm() {
-  popupCard.classList.add("popup_show-card");
-}
-
-function handleCloseCardForm() {
-  popupCard.classList.remove("popup_show-card");
-}
-
-buttonOpenCardForm.addEventListener("click", handleOpenCardForm);
-buttonCloseCard.addEventListener("click", handleCloseCardForm);
-
-function handleOpenProfile() {
-  popupProfile.classList.add("popup_show");
-}
-
-function handleCloseProfile() {
-  popupProfile.classList.remove("popup_show");
-}
-
-buttonEdit.addEventListener("click", handleOpenProfile);
-buttonClose.addEventListener("click", handleCloseProfile);
-
-formSaveProfile.addEventListener("submit", function (evt) {
-  evt.preventDefault();
-  profileName.textContent = inputName.value;
-  profileAbout.textContent = inputAbout.value;
-  handleCloseProfile();
-});
-
-formSaveCard.addEventListener("submit", function (evt) {
-  evt.preventDefault();
-  const newCard = new Card(
-    inputCardName.value,
-    inputCardLink.value
-  ).generateCard();
-
-  cardsContainer.prepend(newCard);
-  handleCloseCardForm();
-});
-
-document.addEventListener("keydown", function (evt) {
+/*
+buttonCloseCard.addEventListener("click", () => {
+  popupCard.close();
+});*/
+/*document.addEventListener("keydown", function (evt) {
   if (evt.key === "Escape") {
     handleCloseCardForm();
-    handleCloseProfile();
     handleCloseImage();
+    //popupProfile.close();
   }
 });
 
-popupCard.addEventListener("click", function (evt) {
+/*popupCard.addEventListener("click", function (evt) {
   if (evt.target === popupCard) {
     handleCloseCardForm();
   }
 });
-
-popupProfile.addEventListener("click", function (evt) {
+*/
+/*popupProfile.addEventListener("click", function (evt) {
   if (evt.target === popupProfile) {
     handleCloseProfile();
   }
-});
+});*/
 
 popupImage.addEventListener("click", function (evt) {
   if (evt.target === popupImage) {

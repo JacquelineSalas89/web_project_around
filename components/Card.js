@@ -1,4 +1,8 @@
-import { buttonClosePopupImage, popupImage, template } from "./utils.js";
+import {
+  buttonClosePopupImage,
+  popupImage,
+  template,
+} from "../scripts/utils.js";
 
 export default class Card {
   constructor(name, link) {
