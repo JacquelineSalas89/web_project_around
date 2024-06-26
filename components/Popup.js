@@ -3,6 +3,7 @@ import { buttonClose } from "../scripts/utils.js";
 export default class Popup {
   constructor(popupSelector) {
     this._popupElement = document.querySelector(popupSelector);
+    this._handleEscClose = this._handleEscClose;
   }
 
   open() {
@@ -13,7 +14,7 @@ export default class Popup {
     this._popupElement.classList.remove("popup_show");
   }
 
-  handleEscClose(evt) {
+  _handleEscClose(evt) {
     if (evt.key === "Escape") {
       this.close();
     }
