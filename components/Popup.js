@@ -5,13 +5,13 @@ export default class Popup {
   }
 
   open() {
-    console.log(this._popupElement);
     this._popupElement.classList.add("popup_show");
     document.addEventListener("keydown", this._handleEscClose);
   }
 
   close() {
     this._popupElement.classList.remove("popup_show");
+    this._popupElement.classList.remove("popup__image_show");
     document.removeEventListener("keydown", this._handleEscClose);
   }
 

@@ -5,10 +5,9 @@ import {
 } from "../scripts/utils.js";
 
 export default class Card {
-  constructor(name, link, handleCardClick) {
+  constructor(name, link) {
     this._name = name;
     this._link = link;
-    this.handleCardClick = handleCardClick;
     this._card = this.getTemplate();
   }
 
@@ -38,10 +37,6 @@ export default class Card {
     this._popupImageFull.alt = this._cardTitle.textContent;
   }
 
-  handleClosePopupImage() {
-    popupImage.classList.remove("popup__image_show");
-  }
-
   setEventListeners() {
     this._buttonlike.addEventListener("click", () => {
       this.handleLike();
@@ -51,10 +46,9 @@ export default class Card {
       this._card.remove();
     });
 
-    this._cardImage.this._name,
-      this._linkaddEventListener("click", () => {
-        this.handleCardClick(this._name, this._link);
-      });
+    this._cardImage.addEventListener("click", () => {
+      this.handleCardClick(this._name, this._link);
+    });
   }
 
   generateCard() {

@@ -8,10 +8,10 @@
 }
 
 .profile__avatar {
-  width: 145px;
-  height: 145px;
-  background-size: auto;
-  border-radius: 60px;
+  width: 155px;
+  height: 155px;
+  background-size: contain;
+  border-radius: 90px;
 }
 
 .profile__info {

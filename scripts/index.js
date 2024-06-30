@@ -68,19 +68,6 @@ const cardSection = new Section(
 );
 cardSection.renderItems();
 
-/*const cardSection = new Section({
-  items: initialCards,
-  renderer: (item) => {
-    const card = new Card(item.name, item.link, () => {
-      popupImage.open(newCard._name, newCard._link);
-    }).generateCard();*/
-
-//const cardElement = card.generateCard();
-//cardSection.addItem(cardElement);
-//},
-
-//cardSection.renderer()
-//});
 const userInfo = new UserInfo({
   nameSelector: ".profile__name",
   jobSelector: ".profile__about",
@@ -88,8 +75,6 @@ const userInfo = new UserInfo({
 
 const popupProfile = new PopupWithForm("#popup-profile", (inputs) => {
   userInfo.setUserInfo({ name: inputs.name, job: inputs.job });
-  /*rofileName.textContent = inputs.name;
-  profileAbout.textContent = inputs.job;*/
 });
 
 const popupCard = new PopupWithForm("#popup-card", (inputs) => {
@@ -112,6 +97,7 @@ buttonEdit.addEventListener("click", () => {
 buttonOpenCardForm.addEventListener("click", () => {
   popupCard.open();
 });
+
 buttonClosePopupImage.addEventListener("click", () => {
   popupImage.close();
 });
