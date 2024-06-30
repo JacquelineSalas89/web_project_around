@@ -5,10 +5,11 @@ import {
 } from "../scripts/utils.js";
 
 export default class Card {
-  constructor(name, link) {
+  constructor(name, link, handleCardClick) {
     this._name = name;
     this._link = link;
     this._card = this.getTemplate();
+    this._handleCardClick = handleCardClick;
   }
 
   getTemplate() {
@@ -28,7 +29,8 @@ export default class Card {
     this._buttonlike.classList.toggle("element__like-button_active");
   }
 
-  handleCardClick() {
+  _handleOpenCard() {
+    this._handleCardClick();
     popupImage.classList.add("popup__image_show");
     this._popupImageFull = document.querySelector("#popup-image-full");
     this._popupImageTitle = document.querySelector("#popup-image-title");
@@ -47,7 +49,7 @@ export default class Card {
     });
 
     this._cardImage.addEventListener("click", () => {
-      this.handleCardClick(this._name, this._link);
+      this._handleOpenCard(this._name, this._link);
     });
   }
 

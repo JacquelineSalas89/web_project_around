@@ -52,7 +52,9 @@ const initialCards = [
 ];
 
 function createCard(item) {
-  const card = new Card(item.name, item.link);
+  const card = new Card(item.name, item.link, () => {
+    popupImage.open(item.name, item.link);
+  });
   return card.generateCard();
 }
 
@@ -77,14 +79,14 @@ const popupProfile = new PopupWithForm("#popup-profile", (inputs) => {
   userInfo.setUserInfo({ name: inputs.name, job: inputs.job });
 });
 
+const popupImage = new PopupWithImage("#popup-image");
+
 const popupCard = new PopupWithForm("#popup-card", (inputs) => {
   const newCard = new Card(inputs.title, inputs.link, () => {
     popupImage.open(newCard._name, newCard._link);
   }).generateCard();
   cardsContainer.prepend(newCard);
 });
-
-const popupImage = new PopupWithImage("#popup-image");
 
 popupProfile.setEventListeners();
 popupCard.setEventListeners();
