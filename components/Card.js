@@ -5,9 +5,10 @@ import {
 } from "../scripts/utils.js";
 
 export default class Card {
-  constructor(name, link) {
+  constructor(name, link, handleCardClick) {
     this._name = name;
     this._link = link;
+    this.handleCardClick = handleCardClick;
     this._card = this.getTemplate();
   }
 
@@ -28,7 +29,7 @@ export default class Card {
     this._buttonlike.classList.toggle("element__like-button_active");
   }
 
-  handleOpenPopupImage() {
+  handleCardClick() {
     popupImage.classList.add("popup__image_show");
     this._popupImageFull = document.querySelector("#popup-image-full");
     this._popupImageTitle = document.querySelector("#popup-image-title");
@@ -36,6 +37,7 @@ export default class Card {
     this._popupImageTitle.textContent = this._cardTitle.textContent;
     this._popupImageFull.alt = this._cardTitle.textContent;
   }
+
   handleClosePopupImage() {
     popupImage.classList.remove("popup__image_show");
   }
@@ -49,9 +51,10 @@ export default class Card {
       this._card.remove();
     });
 
-    this._cardImage.addEventListener("click", () => {
-      this.handleOpenPopupImage();
-    });
+    this._cardImage.this._name,
+      this._linkaddEventListener("click", () => {
+        this.handleCardClick(this._name, this._link);
+      });
   }
 
   generateCard() {

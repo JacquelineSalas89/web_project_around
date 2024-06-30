@@ -1,17 +1,18 @@
-import { buttonClose } from "../scripts/utils.js";
-
 export default class Popup {
   constructor(popupSelector) {
     this._popupElement = document.querySelector(popupSelector);
-    this._handleEscClose = this._handleEscClose;
+    this._handleEscClose = this._handleEscClose.bind(this);
   }
 
   open() {
+    console.log(this._popupElement);
     this._popupElement.classList.add("popup_show");
+    document.addEventListener("keydown", this._handleEscClose);
   }
 
   close() {
     this._popupElement.classList.remove("popup_show");
+    document.removeEventListener("keydown", this._handleEscClose);
   }
 
   _handleEscClose(evt) {
@@ -27,9 +28,4 @@ export default class Popup {
       }
     });
   }
-
-  /*handleButtonClose()
-buttonClose.addEventListener("click", () => {
-  this.close();
-});*/
 }
