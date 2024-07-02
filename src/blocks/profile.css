@@ -23,7 +23,7 @@
   font-size: 42px;
   font-weight: 500;
   color: #ffff;
-  margin: 16px 0 0 26px;
+  margin: 2px 0 0 19px;
   padding: 0;
   overflow: hidden;
 }
@@ -39,7 +39,7 @@
   background-repeat: no-repeat;
   background-color: #000;
   border: 0;
-  margin: 0 0 0 17px;
+  margin: 0 0 0 20px;
   cursor: pointer;
 }
 
@@ -50,10 +50,10 @@
 .profile__about {
   max-width: 415px;
   font-family: "Inter", Arial, sans-serif;
-  font-size: 18px;
+  font-size: 25px;
   font-weight: 400;
   color: #ffff;
-  padding-top: 14px;
+  padding-top: 4px;
   margin-left: 26px;
   overflow: hidden;
 }

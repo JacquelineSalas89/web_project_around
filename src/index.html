@@ -6,7 +6,6 @@
     <title>Alrededor de los Estados Unidos</title>
     <meta name="description" content="Alrededor de los Estados Unidos" />
     <meta name="author" content="Jacqueline Salas" />
-    <link rel="stylesheet" href="pages/index.css" />
     <meta name="keywords" content="Ciudades de Estados Unidos" />
   </head>
 
@@ -15,7 +14,7 @@
       <header class="header">
         <img
           class="header__logo"
-          src="logo.svg"
+          src="<%=require('./images/logo.svg')%>"
           alt="Alrededor de los Estados Unidos"
         />
       </header>
@@ -23,18 +22,24 @@
         <section class="profile">
           <img
             class="profile__avatar"
-            src="images/gira.jpg"
+            src="<%=require('./images/gira.jpg')%>"
             alt="Imagen Jacques Cousteau"
           />
           <div class="profile__info">
             <h1 class="profile__name">Jacqueline Salas</h1>
             <button class="profile__edit-button" type="button">
-              <img src="./images/edit-button.svg" alt="button-edit" />
+              <img
+                src="<%=require('./images/edit-button.svg')%>"
+                alt="button-edit"
+              />
             </button>
             <p class="profile__about">Viajera</p>
           </div>
           <button class="profile__add-button" type="button">
-            <img src="./images/add_button.png" alt="add-button" />
+            <img
+              src="<%=require('./images/add_button.png')%>"
+              alt="add-button"
+            />
           </button>
         </section>
 
@@ -42,7 +47,7 @@
           <form class="popup__form" id="form-profile">
             <img
               class="popup__close-icon"
-              src="./images/Close-Icon.png"
+              src="<%require('./images/Close-Icon.png')%>"
               alt="boton de cerrar form"
               id="close-profile-form"
             />
@@ -85,7 +90,7 @@
           <form class="popup__form" id="form-card">
             <img
               class="popup__close-icon"
-              src="./images/Close-Icon.png"
+              src="<%=require('./images/Close-Icon.png')%>"
               alt="close button"
               id="close-card-form"
             />
@@ -130,7 +135,7 @@
             <span class="popup__image-title" id="popup-image-title"></span>
             <img
               alt="button close image"
-              src="./images/Close-Icon.png"
+              src="<%=require('./images/Close-Icon.png')%>"
               class="popup__image-close"
               id="close-popup-image"
             />
@@ -145,12 +150,12 @@
               <img
                 class="element__like-button"
                 alt="boton de me gusta"
-                src="/images/Group.png"
+                src="<%=require('./images/Group.png')%>"
               />
               <img
                 class="element__delete-button"
                 alt=" boton de borrar"
-                src="./images/Trash.png"
+                src="<%=require('./images/Trash.png')%>"
               />
             </div>
           </div>
@@ -161,6 +166,5 @@
         <h3 class="footer__copyright">© 2024 Jacqueline Salas</h3>
       </footer>
     </div>
-    <script src="./scripts/index.js" type="module"></script>
   </body>
 </html>

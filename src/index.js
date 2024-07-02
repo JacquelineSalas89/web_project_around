@@ -1,9 +1,10 @@
-import Card from "../components/Card.js";
-import FormValidator from "../components/FormValidator.js";
-import PopupWithForm from "../components/PopupWithForm.js";
-import PopupWithImage from "../components/PopupWithImage.js";
-import Section from "../components/Section.js";
-import UserInfo from "../components/UserInfo.js";
+import "./pages/index.css";
+import Card from "./components/Card.js";
+import FormValidator from "./components/FormValidator.js";
+import PopupWithForm from "./components/PopupWithForm.js";
+import PopupWithImage from "./components/PopupWithImage.js";
+import Section from "./components/Section.js";
+import UserInfo from "./components/UserInfo.js";
 
 import {
   buttonEdit,
@@ -22,7 +23,7 @@ import {
   popupImageFull,
   popupImageTitle,
   buttonClosePopupImage,
-} from "./utils.js";
+} from "./scripts/utils.js";
 
 const initialCards = [
   {
@@ -133,3 +134,4 @@ const validatorProfile = new FormValidator(formSaveProfile, {
 });
 
 validatorProfile.enableValidation();
+const numbers = [2, 3, 5];
