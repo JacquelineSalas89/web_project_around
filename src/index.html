@@ -25,6 +25,13 @@
             src="<%=require('./images/gira.jpg')%>"
             alt="Imagen Jacques Cousteau"
           />
+          <div class="profile__avatar-container">
+            <button
+              class="profile__avatar-icon"
+              id="edit-avatar-button"
+              type="button"
+            ></button>
+          </div>
           <div class="profile__info">
             <h1 class="profile__name">Jacqueline Salas</h1>
             <button class="profile__edit-button" type="button">
@@ -67,7 +74,7 @@
             <input
               class="popup__input"
               type="text"
-              name="job"
+              name="about"
               id="input-about"
               minlength="2"
               maxlength="200"
@@ -99,7 +106,7 @@
               class="popup__input"
               id="input-card"
               type="text"
-              name="title"
+              name="name"
               minlength="2"
               maxlength="30"
               value=""
@@ -122,10 +129,8 @@
             </button>
           </form>
         </div>
-        <div class="elements"></div>
-
-        <section class="popup" id="popup-image">
-          <div class="popup__image-container" id="popup-show-image">
+        <div class="popup" id="popup-image">
+          <form class="popup__image-container" id="popup-show-image">
             <img
               class="popup__image-full"
               id="popup-image-full"
@@ -139,19 +144,70 @@
               class="popup__image-close"
               id="close-popup-image"
             />
-          </div>
-        </section>
+          </form>
+        </div>
+
+        <div class="popup" id="popup-delete-card">
+          <form class="popup__form-remove" id="form-card-delete">
+            <img
+              class="popup__close-icon"
+              src="<%=require('./images/Close-Icon.png')%>"
+              alt="close button"
+              id="close-form-delete-card"
+            />
+            <h2 class="popup__title">¿Estás seguro?</h2>
+            <button
+              class="popup__button-delete"
+              type="submit"
+              id="delete-card-button"
+            >
+              Si
+            </button>
+          </form>
+        </div>
+        <div class="popup" id="popup-avatar">
+          <form class="popup__form" id="form-change-avatar">
+            <img
+              class="popup__close-icon"
+              src="<%=require('./images/Close-Icon.png')%>"
+              alt="close button"
+              id="close-form-avatar"
+            />
+            <h2 class="popup__title">Cambiar foto de perfil</h2>
+            <input
+              class="popup__input"
+              type="url"
+              name="url"
+              value=""
+              id="input-url-avatar"
+              placeholder="Enlace de la imagen"
+              required
+            />
+            <span class="popup__input-error input-link-error"> </span
+            ><button
+              class="popup__button-save"
+              type="submit"
+              id="change-avatar-button"
+            >
+              Guardar
+            </button>
+          </form>
+        </div>
+
+        <div class="elements"></div>
 
         <template class="template__card">
           <div class="element">
             <div class="element__card">
               <img class="element__image" id="image" src=" " alt=" " />
               <h3 class="element__text"></h3>
+              <span class="element__like-counter"></span>
               <img
                 class="element__like-button"
                 alt="boton de me gusta"
                 src="<%=require('./images/Group.png')%>"
               />
+
               <img
                 class="element__delete-button"
                 alt=" boton de borrar"

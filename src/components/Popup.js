@@ -2,6 +2,20 @@ export default class Popup {
   constructor(popupSelector) {
     this._popupElement = document.querySelector(popupSelector);
     this._handleEscClose = this._handleEscClose.bind(this);
+    this._buttonSaveInfo = document.querySelector(".popup__button-save");
+  }
+
+  savebutton() {
+    this._buttonSaveInfo.textContent = "guardar";
+  }
+
+  _saveChangesButton() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 1000);
+      this._buttonSaveInfo.textContent = "Guardando...";
+    });
   }
 
   open() {

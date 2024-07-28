@@ -83,6 +83,44 @@
   display: flex;
 }
 
+.popup__form-remove {
+  width: 410px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  color: black;
+  border-radius: 10px 10px 10px 10px;
+  background-color: white;
+  padding: 30px;
+  position: relative;
+}
+
+.popup__form-change {
+  width: 410px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  color: black;
+  border-radius: 10px 10px 10px 10px;
+  background-color: white;
+  padding: 30px;
+  position: relative;
+}
+.popup__button-delete {
+  font-family: "Inter", sans-serif, Arial;
+  background-color: black;
+  color: white;
+  margin-top: 30px;
+  padding: 14px 0 14px 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21.78px;
+  cursor: pointer;
+}
 .popup__image {
   position: fixed;
   display: none;

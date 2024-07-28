@@ -8,6 +8,8 @@
 }
 
 .element__card {
+  display: flex;
+  flex-direction: column;
   position: relative;
   background-color: #ffff;
   width: 282px;
@@ -24,6 +26,8 @@
 }
 
 .element__text {
+  display: flex;
+  justify-content: space-between;
   font-family: "Inter", Arial, sans-serif;
   font-size: 24px;
   font-weight: 900;
@@ -36,8 +40,11 @@
 }
 
 .element__like-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   position: absolute;
-  right: 11px;
+  right: 35px;
   bottom: 25px;
   width: 22px;
   height: 19px;
@@ -45,6 +52,15 @@
   background-repeat: no-repeat;
   border: none;
   background-color: #ffff;
+}
+.element__like-counter {
+  position: absolute;
+  right: 40px;
+  bottom: 5px;
+  color: rgb(18, 4, 38);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 800;
 }
 
 .element__like-button:hover {
