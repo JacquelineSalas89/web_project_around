@@ -92,17 +92,13 @@ function createCard(item) {
     () => {
       popupImage.open(item.name, item.link);
     },
-    () => {},
-    () => {},
     () => {
-      /*const popupDeleteImage = new PopupWithConfirmation(
-        "#popup-delete-card",
-        () => {
-          api.removeCard(item._userId).then((result) => {
-            return result;
-          });
-        }
-      );*/
+      return api.addLike(item._id);
+    },
+    () => {
+      return api.removeLike(item._id);
+    },
+    () => {
       popupDeleteImage.open(card._id);
       popupDeleteImage.setHandleFormSubmit(() => {
         api.removeCards(card._id).then((result) => {

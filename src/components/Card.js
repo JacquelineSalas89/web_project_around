@@ -78,13 +78,18 @@ export default class Card {
   }
 
   handleLike() {
-    if (this._likes.some((like) => like._id === this._userId)) {
-      this._handleAddLike(this._id);
-      this._buttonlike.classList.toggle("elements__heart-active");
-      this._likesCounter.textContent = likes.length;
+    if (!this._likes.some((like) => like._id === this._userId)) {
+      this._handleAddLike(this._id).then((response) => {
+        this._buttonlike.classList.toggle("element__like-button_active");
+        this._likesCounter.textContent = response.likes.length;
+        this._likes = response.likes;
+      });
     } else {
-      this._handleRemoveLike(this._id);
-      this._buttonlike.classList.toggle("elements__heart-active");
+      this._handleRemoveLike(this._id).then((response) => {
+        this._buttonlike.classList.toggle("element__like-button_active");
+        this._likesCounter.textContent = response.likes.length;
+        this._likes = response.likes;
+      });
     }
   }
 

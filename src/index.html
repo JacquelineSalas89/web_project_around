@@ -20,12 +20,13 @@
       </header>
       <main class="content">
         <section class="profile">
-          <img
-            class="profile__avatar"
-            src="<%=require('./images/gira.jpg')%>"
-            alt="Imagen Jacques Cousteau"
-          />
-          <div class="profile__avatar-container">
+          <div class="profile__content">
+            <img
+              class="profile__avatar"
+              src="<%=require('./images/gira.jpg')%>"
+              alt="Imagen Jacques Cousteau"
+            />
+            <div class="profile__avatar-container"></div>
             <button
               class="profile__avatar-icon"
               id="edit-avatar-button"
@@ -125,7 +126,7 @@
             />
             <span class="popup__input-error input-link-error"></span>
             <button class="popup__button-save" type="submit" id="close-card">
-              Crear
+              crear
             </button>
           </form>
         </div>
@@ -189,8 +190,8 @@
               type="submit"
               id="change-avatar-button"
             >
-              Guardar
-            </button>
+              Guardar</button
+            >>
           </form>
         </div>
 
